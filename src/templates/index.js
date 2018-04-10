@@ -1,0 +1,12 @@
+export { default as atomTemplate } from './atom';
+export { default as actionTemplate } from './action';
+export { default as componentTemplate } from './component';
+export { default as containerTemplate } from './container';
+export { default as moleculeTemplate } from './molecule';
+export { default as organismTemplate } from './organism';
+export { default as selectorTemplate } from './selector';
+export { default as reducerTemplate } from './reducer';
+export { default as markdownTemplate } from './markdown';
+export { default as storyTemplate } from './story';
+export { default as queryTemplate } from './query';
+export { default as mutationTemplate } from './mutation';

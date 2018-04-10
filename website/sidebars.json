@@ -1,0 +1,7 @@
+{
+  "docs": {
+    "Motivation": ["Conception"],
+    "Getting Started": ["Installation", "Usage"],
+    "Contributing": ["GitHub"]
+  }
+}

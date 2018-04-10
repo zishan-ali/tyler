@@ -1,0 +1,36 @@
+{
+  "name": "tyler",
+  "version": "1.0.0",
+  "description": "Opinionated creator.",
+  "preferGlobal": true,
+  "author": "Zishan Ali",
+  "license": "ISC",
+  "bin": {
+    "create": "dist/bin/cli.js"
+  },
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build:bin": "babel bin -d dist/bin",
+    "build:src": "babel src -d dist/src",
+    "build": "yarn clean && yarn build:bin && yarn build:src",
+    "prepare": "yarn build",
+    "test": "jest test"
+  },
+  "dependencies": {
+    "inquirer": "^5.2.0",
+    "meow": "^4.0.0",
+    "strip-indent": "^2.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-jest": "^22.4.3",
+    "babel-preset-airbnb": "^2.5.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.0",
+    "eslint-plugin-react": "^7.10.0",
+    "jest": "^23.5.0",
+    "mock-fs": "^4.4.2"
+  }
+}

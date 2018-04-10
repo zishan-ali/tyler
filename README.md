@@ -1,2 +1,5 @@
 # tyler
-Creator of all the things.
+
+### Opinionated creator.
+
+Run `create` to get started!
