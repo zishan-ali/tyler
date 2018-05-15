@@ -8,9 +8,10 @@
 <url> <loc>https://zishan-ali.github.io/blog/2017/09/25/testing-rss.html</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://zishan-ali.github.io/blog/2017/04/10/blog-post-two.html</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://zishan-ali.github.io/blog/2016/03/11/blog-post.html</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
-<url> <loc>https://zishan-ali.github.io/docs/doc1.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://zishan-ali.github.io/docs/doc1.html" /> </url>
-<url> <loc>https://zishan-ali.github.io/docs/doc2.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://zishan-ali.github.io/docs/doc2.html" /> </url>
-<url> <loc>https://zishan-ali.github.io/docs/doc3.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://zishan-ali.github.io/docs/doc3.html" /> </url>
+<url> <loc>https://zishan-ali.github.io/docs/Conception.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://zishan-ali.github.io/docs/Conception.html" /> </url>
 <url> <loc>https://zishan-ali.github.io/docs/doc4.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://zishan-ali.github.io/docs/doc4.html" /> </url>
 <url> <loc>https://zishan-ali.github.io/docs/doc5.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://zishan-ali.github.io/docs/doc5.html" /> </url>
+<url> <loc>https://zishan-ali.github.io/docs/GitHub.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://zishan-ali.github.io/docs/GitHub.html" /> </url>
+<url> <loc>https://zishan-ali.github.io/docs/Installation.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://zishan-ali.github.io/docs/Installation.html" /> </url>
+<url> <loc>https://zishan-ali.github.io/docs/Usage.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://zishan-ali.github.io/docs/Usage.html" /> </url>
 </urlset>
