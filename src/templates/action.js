@@ -1,7 +1,3 @@
-import { createAction } from '../creators'
+import { createAction } from '../creators';
 
-export default (directory) => (
-  [
-    createAction(directory)
-  ]
-);
+export default directory => [createAction(directory)];

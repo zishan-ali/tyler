@@ -1,14 +1,10 @@
-import { kebabCase } from '../utils';
-
-export const selector =
-`import { createSelector } from 'reselect';
+export const selector = `import { createSelector } from 'reselect';
 
 const selector = (state = {}) => state.value;
 
 export default createSelector(selector, value => value);\n`;
 
-export const test =
-`import selector from './selector';
+export const test = `import selector from './selector';
 
 test('returns undefined when state is empty object', () => {
   const state = {};

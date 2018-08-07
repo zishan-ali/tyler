@@ -1,4 +1,3 @@
-export const style =
-`.class {
+export const style = `.class {
 
 }\n`;

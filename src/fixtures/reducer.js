@@ -1,5 +1,4 @@
-export const reducer =
-`import { ACTION_TYPE } from '../actions/action-types';
+export const reducer = `import { ACTION_TYPE } from '../actions/action-types';
 
 export default (state = {}, action = {}) => {
   switch (action.type) {
@@ -10,8 +9,7 @@ export default (state = {}, action = {}) => {
   }
 };\n`;
 
-export const test =
-`import { ACTION_TYPE } from '../actions/action-types';
+export const test = `import { ACTION_TYPE } from '../actions/action-types';
 import reducer from './reducer';
 
 test('initial state is empty object', () => {

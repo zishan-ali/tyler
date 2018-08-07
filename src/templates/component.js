@@ -1,7 +1,3 @@
-import { createComponent } from '../creators'
+import { createComponent } from '../creators';
 
-export default (directory) => (
-  [
-    createComponent(directory)
-  ]
-);
+export default directory => [createComponent(directory)];

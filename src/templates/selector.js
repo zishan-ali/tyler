@@ -1,7 +1,3 @@
-import { createSelector } from '../creators'
+import { createSelector } from '../creators';
 
-export default (directory) => (
-  [
-    createSelector(directory)
-  ]
-);
+export default directory => [createSelector(directory)];

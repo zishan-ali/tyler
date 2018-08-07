@@ -1,5 +1,4 @@
-export const container =
-`import React from 'react';
+export const container = `import React from 'react';
 import { connect } from 'react-redux';
 
 const Component = props => <div>{props}</div>;
@@ -12,8 +11,7 @@ const mapDispatchToProps = dispatch => ({})
 
 export default connect(mapStateToProps, mapDispatchToProps)(Container);\n`;
 
-export const test =
-`import React from 'react';
+export const test = `import React from 'react';
 import { shallow } from 'enzyme';
 import configureStore from 'redux-mock-store';
 import Container from './Container';

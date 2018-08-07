@@ -1,13 +1,3 @@
-import {
-  createComponent,
-  createStory,
-  createMarkdown
-} from '../creators'
+import { createComponent, createStory, createMarkdown } from '../creators';
 
-export default (directory) => (
-  [
-    createComponent(directory),
-    createStory(directory),
-    createMarkdown(directory)
-  ]
-);
+export default directory => [createComponent(directory), createStory(directory), createMarkdown(directory)];

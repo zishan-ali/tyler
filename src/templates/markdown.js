@@ -1,7 +1,3 @@
-import { createMarkdown } from '../creators'
+import { createMarkdown } from '../creators';
 
-export default (directory) => (
-  [
-    createMarkdown(directory)
-  ]
-);
+export default directory => [createMarkdown(directory)];

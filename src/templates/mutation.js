@@ -1,7 +1,3 @@
-import { createMutation } from '../creators'
+import { createMutation } from '../creators';
 
-export default (directory) => (
-  [
-    createMutation(directory)
-  ]
-);
+export default directory => [createMutation(directory)];

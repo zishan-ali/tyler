@@ -1,5 +1,4 @@
-export const query =
-`import gql from 'graphql-tag';
+export const query = `import gql from 'graphql-tag';
 
 const query = gql\`{
   foo {
@@ -10,8 +9,7 @@ const query = gql\`{
 
 export default query;\n`;
 
-export const mutation =
-`import gql from 'graphql-tag';
+export const mutation = `import gql from 'graphql-tag';
 
 const mutation = gql\`{
   foo(bar) {

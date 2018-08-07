@@ -1,4 +1,5 @@
 import fs from 'fs';
+
 import stripIndent from 'strip-indent';
 
 export default (path, content) => {
@@ -13,7 +14,7 @@ export default (path, content) => {
         }
       }
 
-      fs.write(fd, prettyContent, (writeErr) => {
+      fs.write(fd, prettyContent, writeErr => {
         if (writeErr) {
           reject(writeErr);
           return;
@@ -21,5 +22,5 @@ export default (path, content) => {
         resolve(path);
       });
     });
-  })
+  });
 };

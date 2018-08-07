@@ -1,7 +1,3 @@
-import { createStory } from '../creators'
+import { createStory } from '../creators';
 
-export default (directory) => (
-  [
-    createStory(directory)
-  ]
-);
+export default directory => [createStory(directory)];

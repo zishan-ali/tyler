@@ -11,7 +11,7 @@ import {
   markdownTemplate,
   storyTemplate,
   queryTemplate,
-  mutationTemplate
+  mutationTemplate,
 } from '../templates';
 
 export default (type, directory) => {
@@ -43,6 +43,6 @@ export default (type, directory) => {
     case 'mutation':
       return Promise.all(mutationTemplate(directory));
     default:
-      return Promise.reject('Template does not exist');
+      return Promise.reject(new Error('Template does not exist.'));
   }
-}
+};

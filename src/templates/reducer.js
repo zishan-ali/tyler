@@ -1,7 +1,3 @@
-import { createReducer } from '../creators'
+import { createReducer } from '../creators';
 
-export default (directory) => (
-  [
-    createReducer(directory)
-  ]
-);
+export default directory => [createReducer(directory)];

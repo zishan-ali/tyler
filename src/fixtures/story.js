@@ -1,3 +1,2 @@
-export const story =
-`
+export const story = `
 `;

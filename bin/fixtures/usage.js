@@ -1,5 +1,4 @@
-export const usage =
- `Usage
+export const usage = `Usage
 
   $ create [template] [name]
 

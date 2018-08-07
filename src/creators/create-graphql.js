@@ -1,17 +1,13 @@
-import { createFile, createFolder } from './';
-import {
-  queryFixture,
-  mutationFixture
-} from '../fixtures';
+import { queryFixture, mutationFixture } from '../fixtures';
 
-export const query = (directory) => {
+import { createFile, createFolder } from '.';
+
+export const query = directory => {
   const folderPath = `${directory}/graphql`;
-  return createFolder(folderPath)
-    .then(() => createFile(`${folderPath}/queries.js`, queryFixture))
+  return createFolder(folderPath).then(() => createFile(`${folderPath}/queries.js`, queryFixture));
 };
 
-export const mutation = (directory) => {
+export const mutation = directory => {
   const folderPath = `${directory}/graphql`;
-  return createFolder(folderPath)
-    .then(() => createFile(`${folderPath}/mutations.js`, mutationFixture))
+  return createFolder(folderPath).then(() => createFile(`${folderPath}/mutations.js`, mutationFixture));
 };

@@ -6,12 +6,12 @@ export const creator = (name, type) => {
 
   let directory;
 
-  switch(type) {
+  switch (type) {
     case 'atom':
     case 'molecule':
     case 'organism':
     case 'page':
-      directory = `${process.cwd()}/${kebabCaseName}`
+      directory = `${process.cwd()}/${kebabCaseName}`;
       break;
     default:
       directory = process.cwd();
@@ -20,9 +20,8 @@ export const creator = (name, type) => {
   return createFolder(directory)
     .then(() => createTemplate(type, directory))
     .then(() => process.exit())
-    .catch((err) => {
+    .catch(err => {
       console.log(err);
       process.exit();
-    }
-  );
+    });
 };
