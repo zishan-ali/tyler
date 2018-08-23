@@ -13,7 +13,6 @@
     "build:bin": "babel bin -d dist/bin",
     "build:src": "babel src -d dist/src",
     "build": "yarn clean && yarn build:bin && yarn build:src",
-    "prepare": "yarn build",
     "test": "jest test"
   },
   "dependencies": {
