@@ -3,11 +3,29 @@
   "version": "1.0.3",
   "description": "Opinionated creator.",
   "preferGlobal": true,
-  "author": "Zishan Ali",
+  "authors": [
+    { "name": "Zishan Ali" },
+    { "name": "Robert White" }
+  ],
   "license": "ISC",
+  "keywords": [
+    "generator",
+    "creator",
+    "cli",
+    "tool"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zishan-ali/tyler"
+  },
+  "bugs": {
+    "url": "https://github.com/zishan-ali/tyler/issues"
+  },
+  "homepage": "https://zishan-ali.github.io/tyler/",
   "files": [
     "dist"
   ],
+  "main": "dist/src/index.js",
   "bin": {
     "create": "dist/bin/cli.js"
   },

@@ -1,5 +1,6 @@
-export const usage =
- `Usage
+export const usage = `
+
+Usage
 
   $ create [template] [name]
 
@@ -20,4 +21,6 @@ Examples
 
   $ create atom button
   ---------------------
-  directly creates an [atom] called [button]`;
+  directly creates an [atom] called [button]
+  
+`;
