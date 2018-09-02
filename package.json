@@ -1,11 +1,15 @@
 {
   "name": "tyler",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Opinionated creator.",
   "preferGlobal": true,
   "authors": [
-    { "name": "Zishan Ali" },
-    { "name": "Robert White" }
+    {
+      "name": "Zishan Ali"
+    },
+    {
+      "name": "Robert White"
+    }
   ],
   "license": "ISC",
   "keywords": [
