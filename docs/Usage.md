@@ -9,7 +9,9 @@ Simply run **create** to get started once installed.
 
 The command sequence is as follows:
 
-```create [template] [name]```
+```
+create [template] [name]
+```
 
 The **name** is not-required/optional for some templates. See our current list of available templates you're able to generate using **tyler** [here](https://zishan-ali.github.io/tyler/docs/Usage.html#templates).
 
@@ -45,17 +47,17 @@ Examples
 
 The template name you'd succeed the **create** command with in your CLI would be the singular noun of the template you're using as shown below:
 
-| **template** | **command** |
-|-----------|----------|
-| atoms | atom |
-| molecules | molecule |
-| organisms | organism |
-| components | component |
-| containers | container |
-| actions | action |
-| selectors | selector |
-| reducers | reducer |
-| storyies | story |
-| queryies | query |
-| mutations | mutation |
+| **template** | **command** | **supports name** |
+|-----------|-----------|----------|
+| atoms | atom | ✅ |
+| molecules | molecule | ✅ |
+| organisms | organism | ✅ |
+| components | component | ❌ |
+| containers | container | ❌ |
+| actions | action | ❌ |
+| selectors | selector | ❌ |
+| reducers | reducer | ❌ |
+| stories | story | ❌ |
+| queries | query | ❌ |
+| mutations | mutation | ❌ |
 
