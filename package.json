@@ -1,6 +1,6 @@
 {
   "name": "tyler",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "An interactive React.js CLI for building atomic components & utilities.",
   "preferGlobal": true,
   "authors": [
