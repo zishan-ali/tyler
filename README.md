@@ -9,15 +9,15 @@
 
   - [**Step 1**](#create-an-issue) Create an issue to inform the maintainers and other contributors about what you're working on.
   
-  - [**Step 2**](#fork-the-repository) Fork the repository, develop and test your code changes and add any relevant documentation. Ensure that your commit messages clearly describe the changes.
+  - [**Step 2**](#fork-the-repository) Fork the repository, develop and test your code changes and add any relevant documentation. Ensure that your commit messages describe the changes.
   
   - [**Step 3**](#make-a-pull-request) Make a pull request.
 
 ### Create an Issue
 
-Scour the issues for an issue similar to what you'd be working on prior to starting a discussion. It is possible that someone else is already working on your idea, your approach is not quite right, or that the functionality exists already.
+Scour the issues for an issue similar to what you'd be working on prior to starting a discussion. It's possible that someone else is already working on your idea, your approach is not quite right, or that the functionality exists already.
 
-If not [click here](https://github.com/zishan-ali/tyler/issues/new?template=feature_request.md) to create a ticket for a feature request.
+If not, [click here](https://github.com/zishan-ali/tyler/issues/new?template=feature_request.md) to create a ticket for a feature request.
 
 There is no style guide as of yet but attempt to keep your code as clean as possible and follow conventions already set out in the existing codebase.
 
@@ -35,11 +35,11 @@ Scour the issues for an issue similar to what you'd be working on prior to start
 
 If not [click here](https://github.com/zishan-ali/tyler/issues/new?template=bug_report.md) to create a ticket to describe the bug you've found.
 
-There is no style guide as of yet but attempt to keep your code as clean as possible and follow conventions already set out in the existing codebase.
+There is no style guide as of yet but attempt to keep your code as clean as possible and follow conventions already set out in the existing codebase. We recommend using [Hemingway](www.hemingwayapp.com) when writing/editing documentation.
 
 ## 🎰 Change Log
 
-(-)
+See the [CHANGELOG](./CHANGELOG.md) here.
 
 ## 📚 Contributors
 
