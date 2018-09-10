@@ -35,7 +35,7 @@ Scour the issues for an issue similar to what you'd be working on prior to start
 
 If not [click here](https://github.com/zishan-ali/tyler/issues/new?template=bug_report.md) to create a ticket to describe the bug you've found.
 
-There is no style guide as of yet but attempt to keep your code as clean as possible and follow conventions already set out in the existing codebase. We recommend using [Hemingway](www.hemingwayapp.com) when writing/editing documentation.
+There is no style guide as of yet but attempt to keep your code as clean as possible and follow conventions already set out in the existing codebase. We recommend using [Hemingway](https://www.hemingwayapp.com) when writing/editing documentation.
 
 ## 🎰 Change Log
 
