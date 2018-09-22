@@ -1,9 +1,11 @@
 export { default as atomTemplate } from './atom';
 export { default as actionTemplate } from './action';
 export { default as componentTemplate } from './component';
-export { default as containerTemplate } from './container';
+export { default as reduxContainerTemplate } from './redux-container';
+export { default as apolloContainerTemplate } from './apollo-container';
 export { default as moleculeTemplate } from './molecule';
-export { default as organismTemplate } from './organism';
+export { default as apolloOrganismTemplate } from './apollo-organism';
+export { default as reduxOrganismTemplate } from './redux-organism';
 export { default as selectorTemplate } from './selector';
 export { default as reducerTemplate } from './reducer';
 export { default as markdownTemplate } from './markdown';

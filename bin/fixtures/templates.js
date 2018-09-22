@@ -1,7 +1,8 @@
 export const templates = [
   'atom',
   'molecule',
-  'organism',
+  'apollo-organism',
+  'redux-organism',
   'component',
   'container',
   'action',

@@ -5,8 +5,11 @@ export { actionTypes as actionTypesFixture } from './action';
 export { component as componentFixture } from './component';
 export { test as componentTestFixture } from './component';
 
-export { container as containerFixture } from './container';
-export { test as containerTestFixture } from './container';
+export { container as reduxContainerFixture } from './redux-container';
+export { test as reduxContainerTestFixture } from './redux-container';
+
+export { container as apolloContainerFixture } from './apollo-container';
+export { test as apolloContainerTestFixture } from './apollo-container';
 
 export { reducer as reducerFixture } from './reducer';
 export { test as reducerTestFixture } from './reducer';

@@ -51,7 +51,8 @@ The template name you'd succeed the **create** command with in your CLI would be
 |-----------|-----------|----------|
 | atoms | atom | ✅ |
 | molecules | molecule | ✅ |
-| organisms | organism | ✅ |
+| organisms (apollo) | apollo-organism | ✅ |
+| organisms (redux) | redux-organism | ✅ |
 | components | component | ❌ |
 | containers | container | ❌ |
 | actions | action | ❌ |

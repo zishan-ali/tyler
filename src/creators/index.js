@@ -3,7 +3,8 @@ export { default as createFile } from './create-file';
 export { default as createAppendices } from './create-appendices';
 export { default as createAction } from './create-action';
 export { default as createComponent } from './create-component';
-export { default as createContainer } from './create-container';
+export { default as createReduxContainer } from './create-redux-container';
+export { default as createApolloContainer } from './create-apollo-container';
 
 export { query as createQuery } from './create-graphql';
 export { mutation as createMutation } from './create-graphql';

@@ -1,9 +1,11 @@
 import {
   atomTemplate,
   moleculeTemplate,
-  organismTemplate,
+  apolloOrganismTemplate,
+  reduxOrganismTemplate,
   componentTemplate,
-  containerTemplate,
+  apolloContainerTemplate,
+  reduxContainerTemplate,
   actionTemplate,
   selectorTemplate,
   reducerTemplate,
@@ -19,12 +21,16 @@ export default (type, directory) => {
       return Promise.all(atomTemplate(directory));
     case 'molecule':
       return Promise.all(moleculeTemplate(directory));
-    case 'organism':
-      return Promise.all(organismTemplate(directory));
+    case 'apollo-organism':
+      return Promise.all(apolloOrganismTemplate(directory));
+    case 'redux-organism':
+      return Promise.all(reduxOrganismTemplate(directory));
     case 'component':
       return Promise.all(componentTemplate(directory));
-    case 'container':
-      return Promise.all(containerTemplate(directory));
+    case 'apollo-container':
+      return Promise.all(apolloContainerTemplate(directory));
+    case 'redux-container':
+      return Promise.all(reduxContainerTemplate(directory));
     case 'action':
       return Promise.all(actionTemplate(directory));
     case 'selector':
