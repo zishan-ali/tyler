@@ -1,7 +1,7 @@
 import { createReducer } from '../creators'
 
-export default (directory) => (
+export default (directory, recipes) => (
   [
-    createReducer(directory)
+    createReducer(directory, recipes)
   ]
 );

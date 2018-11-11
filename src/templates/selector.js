@@ -1,7 +1,7 @@
 import { createSelector } from '../creators'
 
-export default (directory) => (
+export default (directory, recipes) => (
   [
-    createSelector(directory)
+    createSelector(directory, recipes)
   ]
 );

@@ -4,14 +4,18 @@ import {
   mutationFixture
 } from '../fixtures';
 
-export const query = (directory) => {
+export const query = (directory, 
+  { query = queryFixture }
+) => {
   const folderPath = `${directory}/graphql`;
   return createFolder(folderPath)
-    .then(() => createFile(`${folderPath}/queries.js`, queryFixture))
+    .then(() => createFile(`${folderPath}/queries.js`, query));
 };
 
-export const mutation = (directory) => {
+export const mutation = (directory, 
+  { mutation = mutationFixture }
+) => {
   const folderPath = `${directory}/graphql`;
   return createFolder(folderPath)
-    .then(() => createFile(`${folderPath}/mutations.js`, mutationFixture))
+    .then(() => createFile(`${folderPath}/mutations.js`, mutation));
 };

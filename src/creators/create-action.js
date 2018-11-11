@@ -5,10 +5,16 @@ import {
   actionTypesFixture
 } from '../fixtures';
 
-export default (directory) => {
+export default (directory, 
+  { 
+    action = actionFixture, 
+    actionTypes = actionTypesFixture, 
+    actionTest =  actionTestFixture 
+  }
+) => {
   const folderPath = `${directory}/actions`;
   return createFolder(folderPath)
-    .then(() => createAppendices(`${folderPath}/action-types.js`, actionTypesFixture))
-    .then(() => createFile(`${folderPath}/action.js`, actionFixture))
-    .then(() => createFile(`${folderPath}/action.spec.js`, actionTestFixture))
+    .then(() => createAppendices(`${folderPath}/action-types.js`, actionTypes))
+    .then(() => createFile(`${folderPath}/action.js`, action))
+    .then(() => createFile(`${folderPath}/action.spec.js`, actionTest));
 };

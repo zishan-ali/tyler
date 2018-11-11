@@ -3,13 +3,13 @@ import {
   createStory,
   createMarkdown,
   createStyle
-} from '../creators'
+} from '../creators';
 
-export default (directory) => (
+export default (directory, recipes) => (
   [
-    createComponent(directory),
-    createStory(directory),
-    createMarkdown(directory),
-    createStyle(directory)
+    createComponent(directory, recipes),
+    createStory(directory, recipes),
+    createMarkdown(directory, recipes),
+    createStyle(directory, recipes)
   ]
 );

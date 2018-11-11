@@ -1,7 +1,7 @@
 import { createComponent } from '../creators'
 
-export default (directory) => (
+export default (directory, recipes) => (
   [
-    createComponent(directory)
+    createComponent(directory, recipes)
   ]
 );

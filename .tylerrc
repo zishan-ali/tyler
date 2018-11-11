@@ -1,0 +1,4 @@
+{
+  "useCustomFixtures": true,
+  "customFixturesDirectory": "./recipes"
+}

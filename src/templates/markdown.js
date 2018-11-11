@@ -1,7 +1,7 @@
 import { createMarkdown } from '../creators'
 
-export default (directory) => (
+export default (directory, recipes) => (
   [
-    createMarkdown(directory)
+    createMarkdown(directory, recipes)
   ]
 );

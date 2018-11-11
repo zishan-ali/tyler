@@ -1,7 +1,7 @@
 import { createContainer } from '../creators'
 
-export default (directory) => (
+export default (directory, recipes) => (
   [
-    createContainer(directory)
+    createContainer(directory, recipes)
   ]
 );

@@ -1,7 +1,7 @@
 import { createStory } from '../creators'
 
-export default (directory) => (
+export default (directory, recipes) => (
   [
-    createStory(directory)
+    createStory(directory, recipes)
   ]
 );

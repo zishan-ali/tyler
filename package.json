@@ -38,7 +38,9 @@
     "build:bin": "babel bin -d dist/bin",
     "build:src": "babel src -d dist/src",
     "build": "yarn clean && yarn build:bin && yarn build:src",
-    "lint": "eslint ./src/**/*.js",
+    "format": "prettier --write **/*.js",
+    "lint": "eslint **/*.js",
+    "lint:fix": "eslint **/*.js --fix",
     "test": "jest test"
   },
   "linters": {
@@ -57,6 +59,7 @@
     "babel-preset-airbnb": "^2.5.1",
     "eslint": "^5.6.1",
     "jest": "^23.5.0",
-    "mock-fs": "^4.4.2"
+    "mock-fs": "^4.4.2",
+    "prettier": "^1.15.2"
   }
 }
