@@ -1,9 +1,9 @@
 import mockfs from 'mock-fs';
 import fs from 'fs';
 import { createComponent } from '../../src/creators';
-import { componentFixture, componentTestFixture } from '../../src/fixtures';
+import { componentFixture, componentSpecFixture } from '../../src/fixtures';
 
-describe('.createComponent/1', async () => {
+describe('.createComponent/2', async () => {
   const parentPath = './src/foo-bar';
   const templatePath = `${parentPath}/components`;
   
@@ -18,7 +18,7 @@ describe('.createComponent/1', async () => {
   });
 
   it('creates a `components` folder in the given directory', (done) => {
-    createComponent(parentPath)
+    createComponent(parentPath, {})
       .then(() => {
         expect(
           fs.existsSync(templatePath)).toBe(true);
@@ -27,7 +27,7 @@ describe('.createComponent/1', async () => {
   });
 
   it('creates a `component` file in the `components` directory', (done) => {
-    createComponent(parentPath)
+    createComponent(parentPath, {})
       .then(() => {
         expect(
           fs.readFileSync(`${templatePath}/Component.jsx`, { encoding: 'utf8' })
@@ -37,11 +37,11 @@ describe('.createComponent/1', async () => {
   });
 
   it('creates a corresponding test file', (done) => {
-    createComponent(parentPath)
+    createComponent(parentPath, {})
       .then(() => {
         expect(
           fs.readFileSync(`${templatePath}/Component.spec.js`, { encoding: 'utf8' })
-        ).toEqual(componentTestFixture);
+        ).toEqual(componentSpecFixture);
         done();
       });
   });

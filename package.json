@@ -38,7 +38,7 @@
     "build:bin": "babel bin -d dist/bin",
     "build:src": "babel src -d dist/src",
     "build": "yarn clean && yarn build:bin && yarn build:src",
-    "lint": "eslint **/*.js",
+    "lint": "eslint ./src/**/*.js",
     "lint:fix": "eslint **/*.js --fix",
     "test": "jest test"
   },

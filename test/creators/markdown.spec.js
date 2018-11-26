@@ -3,7 +3,7 @@ import fs from 'fs';
 import { createMarkdown } from '../../src/creators';
 import { readMeFixture } from '../../src/fixtures';
 
-describe('.createMarkdown/1', async () => {
+describe('.createMarkdown/2', async () => {
   const parentPath = './src/foo-bar';
 
   beforeEach(() => {
@@ -17,7 +17,7 @@ describe('.createMarkdown/1', async () => {
   });
   
   it('creates an `readme` file in the given directory', (done) => {
-    createMarkdown(parentPath)
+    createMarkdown(parentPath, {})
       .then(() => {
         expect(
           fs.readFileSync(`${parentPath}/README.md`, { encoding: 'utf8' })

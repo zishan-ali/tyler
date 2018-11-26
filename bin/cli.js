@@ -5,7 +5,7 @@ import meow from 'meow';
 import fs from 'fs';
 
 import { creator } from '../src';
-
+import { camelCase } from '../src/utils';
 import { usageFixture } from './fixtures';
 import { nameQuestion, templateQuestion } from './questions';
 
@@ -23,11 +23,13 @@ const targetPath = `${process.cwd()}/.tylerrc`;
 const hasConfig = fs.existsSync(targetPath);
 const config = hasConfig && fs.readFileSync(targetPath, { encoding: 'utf8' });
 const configContents = JSON.parse(config);
+const hasFileExtensions = filename => filename.includes('.');
 const stripFileExtensions = filename => filename.split('.').slice(0, -1).join('.');
 
 const { useCustomFixtures, customFixturesDirectory } = configContents;
 
 let customFixtures = {};
+const customFixturesDirectoryExists = fs.existsSync(customFixturesDirectory);
 
 const readCustomFixtures = (directory, files) => {
   let data = {};
@@ -38,8 +40,9 @@ const readCustomFixtures = (directory, files) => {
         const result = fs.readFileSync(directory + '/' + file, {
           encoding: 'utf8'
         });
-        const fileWithoutExtension = stripFileExtensions(file);
-        data[fileWithoutExtension] = result;
+        const fileWithoutExtension = hasFileExtensions(file) ? stripFileExtensions(file) : file;
+        const sanitizedFilename = camelCase(fileWithoutExtension);
+        data[sanitizedFilename] = result;
       }
     });
 
@@ -53,7 +56,7 @@ const getCustomFixtures = () => {
   return readCustomFixtures(customFixturesDirectory, allFiles);
 };
 
-if (useCustomFixtures) {
+if (useCustomFixtures && customFixturesDirectoryExists) {
   customFixtures = getCustomFixtures();
 }
 

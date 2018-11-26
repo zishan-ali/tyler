@@ -1,9 +1,9 @@
 import mockfs from 'mock-fs';
 import fs from 'fs';
 import { createReducer } from '../../src/creators';
-import { reducerFixture, reducerTestFixture } from '../../src/fixtures';
+import { reducerFixture, reducerSpecFixture } from '../../src/fixtures';
 
-describe('.createReducer/1', async () => {
+describe('.createReducer/2', async () => {
   const parentPath = './src/foo-bar';
   const templatePath = `${parentPath}/reducers`;
   beforeEach(() => {
@@ -17,7 +17,7 @@ describe('.createReducer/1', async () => {
   });
 
   it('creates a `reducers` folder in the given directory', (done) => {
-    createReducer(parentPath)
+    createReducer(parentPath, {})
       .then(() => {
         expect(
           fs.existsSync(templatePath)).toBe(true);
@@ -26,7 +26,7 @@ describe('.createReducer/1', async () => {
   });
 
   it('creates a `reducer` file in the `reducers` directory', (done) => {
-    createReducer(parentPath)
+    createReducer(parentPath, {})
       .then(() => {
         expect(
           fs.readFileSync(`${templatePath}/reducer.js`, { encoding: 'utf8' })
@@ -36,11 +36,11 @@ describe('.createReducer/1', async () => {
   });
 
   it('creates a corresponding test file', (done) => {
-    createReducer(parentPath)
+    createReducer(parentPath, {})
       .then(() => {
         expect(
           fs.readFileSync(`${templatePath}/reducer.spec.js`, { encoding: 'utf8' })
-        ).toEqual(reducerTestFixture);
+        ).toEqual(reducerSpecFixture);
         done();
       });
   });
