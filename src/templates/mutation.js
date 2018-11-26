@@ -1,4 +1,4 @@
-import { createMutation } from '../creators'
+import { createMutation } from '../creators';
 
 export default (directory, recipes) => (
   [

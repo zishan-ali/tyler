@@ -1,4 +1,4 @@
-import { createStory } from '../creators'
+import { createStory } from '../creators';
 
 export default (directory, recipes) => (
   [

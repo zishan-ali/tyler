@@ -1,4 +1,4 @@
-import { createMarkdown } from '../creators'
+import { createMarkdown } from '../creators';
 
 export default (directory, recipes) => (
   [

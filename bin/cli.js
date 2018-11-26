@@ -1,18 +1,18 @@
 #!/usr/bin/env node
 
-import { prompt } from "inquirer";
-import meow from "meow";
-import fs from "fs";
+import { prompt } from 'inquirer';
+import meow from 'meow';
+import fs from 'fs';
 
-import { creator } from "../src";
+import { creator } from '../src';
 
-import { usageFixture } from "./fixtures";
-import { nameQuestion, templateQuestion } from "./questions";
+import { usageFixture } from './fixtures';
+import { nameQuestion, templateQuestion } from './questions';
 
 const {
   input: [template, ...inputName]
 } = meow(usageFixture);
-const componentName = inputName.join(" ");
+const componentName = inputName.join(' ');
 
 const nameAndTemplate = componentName && template;
 const nameNoTemplate = componentName && !template;
@@ -21,7 +21,7 @@ const noInput = !componentName && !template;
 
 const targetPath = `${process.cwd()}/.tylerrc`;
 const hasConfig = fs.existsSync(targetPath);
-const config = hasConfig && fs.readFileSync(targetPath, { encoding: "utf8" });
+const config = hasConfig && fs.readFileSync(targetPath, { encoding: 'utf8' });
 const configContents = JSON.parse(config);
 const stripFileExtensions = filename => filename.split('.').slice(0, -1).join('.');
 
@@ -34,9 +34,9 @@ const readCustomFixtures = (directory, files) => {
 
   files &&
     files.forEach(file => {
-      if (fs.lstatSync(directory + "/" + file).isFile()) {
-        const result = fs.readFileSync(directory + "/" + file, {
-          encoding: "utf8"
+      if (fs.lstatSync(directory + '/' + file).isFile()) {
+        const result = fs.readFileSync(directory + '/' + file, {
+          encoding: 'utf8'
         });
         const fileWithoutExtension = stripFileExtensions(file);
         data[fileWithoutExtension] = result;
@@ -48,7 +48,7 @@ const readCustomFixtures = (directory, files) => {
 
 const getCustomFixtures = () => {
   const allFiles = fs.readdirSync(customFixturesDirectory, {
-    encoding: "utf8"
+    encoding: 'utf8'
   });
   return readCustomFixtures(customFixturesDirectory, allFiles);
 };

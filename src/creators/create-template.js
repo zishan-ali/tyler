@@ -42,4 +42,4 @@ export default (type, directory, recipes) => {
     default:
       return Promise.reject('Template does not exist');
   }
-}
+};

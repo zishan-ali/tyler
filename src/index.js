@@ -1,5 +1,5 @@
-import { createFolder, createTemplate } from "./creators";
-import { kebabCase } from "./utils";
+import { createFolder, createTemplate } from './creators';
+import { kebabCase } from './utils';
 
 export const creator = (name, type, recipes) => {
   const kebabCaseName = kebabCase(name);
@@ -7,9 +7,9 @@ export const creator = (name, type, recipes) => {
   let directory;
 
   switch (type) {
-    case "atom":
-    case "molecule":
-    case "organism":
+    case 'atom':
+    case 'molecule':
+    case 'organism':
       directory = `${process.cwd()}/${kebabCaseName}`;
       break;
     default:

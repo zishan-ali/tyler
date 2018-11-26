@@ -14,4 +14,4 @@ export default (directory,
   return createFolder(folderPath)
     .then(() => createFile(`${folderPath}/selector.js`, selector))
     .then(() => createFile(`${folderPath}/selector.spec.js`, selectorTest));
-}
+};

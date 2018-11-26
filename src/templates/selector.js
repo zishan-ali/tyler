@@ -1,4 +1,4 @@
-import { createSelector } from '../creators'
+import { createSelector } from '../creators';
 
 export default (directory, recipes) => (
   [
