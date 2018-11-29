@@ -6,7 +6,7 @@ import fs from 'fs';
 
 import { creator } from '../src';
 import { camelCase } from '../src/utils';
-import { usageFixture } from './fixtures';
+import { usageFixture, atomicTemplatesFixture } from './fixtures';
 import { nameQuestion, templateQuestion } from './questions';
 
 const {
@@ -15,9 +15,10 @@ const {
 const componentName = inputName.join(' ');
 
 const nameAndTemplate = componentName && template;
-const nameNoTemplate = componentName && !template;
 const templateNoName = !componentName && template;
 const noInput = !componentName && !template;
+
+const isAtomic = atomicTemplatesFixture.includes(template);
 
 const targetPath = `${process.cwd()}/.tylerrc`;
 const hasConfig = fs.existsSync(targetPath);
@@ -62,15 +63,7 @@ if (useCustomFixtures && customFixturesDirectoryExists) {
 
 if (nameAndTemplate) {
   creator(componentName, template, customFixtures);
-} else if (nameNoTemplate) {
-  prompt(templateQuestion)
-    .then(({ type }) => {
-      creator(componentName, type, customFixtures);
-    })
-    .catch(err => {
-      console.error(err);
-    });
-} else if (templateNoName) {
+} else if (templateNoName && isAtomic) {
   prompt(nameQuestion)
     .then(({ name }) => {
       creator(name, template, customFixtures);
@@ -78,6 +71,8 @@ if (nameAndTemplate) {
     .catch(err => {
       console.error(err);
     });
+} else if (templateNoName && !isAtomic) {
+  creator(null, template, customFixtures);
 } else if (noInput) {
   prompt([...templateQuestion, ...nameQuestion])
     .then(({ name, type }) => {

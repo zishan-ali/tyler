@@ -1,7 +1,8 @@
 import {
   atomTemplate,
   moleculeTemplate,
-  organismTemplate,
+  apolloOrganismTemplate,
+  reduxOrganismTemplate,
   componentTemplate,
   containerTemplate,
   actionTemplate,
@@ -10,7 +11,8 @@ import {
   markdownTemplate,
   storyTemplate,
   queryTemplate,
-  mutationTemplate
+  mutationTemplate,
+  templateTemplate
 } from '../templates';
 
 export default (type, directory, recipes) => {
@@ -19,8 +21,10 @@ export default (type, directory, recipes) => {
       return Promise.all(atomTemplate(directory, recipes));
     case 'molecule':
       return Promise.all(moleculeTemplate(directory, recipes));
-    case 'organism':
-      return Promise.all(organismTemplate(directory, recipes));
+    case 'apollo-organism':
+      return Promise.all(apolloOrganismTemplate(directory, recipes));
+    case 'redux-organism':
+      return Promise.all(reduxOrganismTemplate(directory, recipes));
     case 'component':
       return Promise.all(componentTemplate(directory, recipes));
     case 'container':
@@ -39,6 +43,8 @@ export default (type, directory, recipes) => {
       return Promise.all(queryTemplate(directory, recipes));
     case 'mutation':
       return Promise.all(mutationTemplate(directory, recipes));
+    case 'template':
+      return Promise.all(templateTemplate(directory, recipes));
     default:
       return Promise.reject('Template does not exist');
   }

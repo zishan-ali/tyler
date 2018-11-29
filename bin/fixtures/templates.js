@@ -1,7 +1,7 @@
+import { atomicTemplates } from './atomic-templates';
+
 export const templates = [
-  'atom',
-  'molecule',
-  'organism',
+  ...atomicTemplates,
   'component',
   'container',
   'action',
