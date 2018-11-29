@@ -12,7 +12,10 @@ import {
   storyTemplate,
   queryTemplate,
   mutationTemplate,
-  templateTemplate
+  templateTemplate,
+  reactAppTemplate,
+  apolloAppTemplate,
+  reduxAppTemplate
 } from '../templates';
 
 export default (type, directory, recipes) => {
@@ -45,6 +48,12 @@ export default (type, directory, recipes) => {
       return Promise.all(mutationTemplate(directory, recipes));
     case 'template':
       return Promise.all(templateTemplate(directory, recipes));
+    case 'react-app':
+      return Promise.all(reactAppTemplate(directory, recipes));
+    case 'apollo-app':
+      return Promise.all(apolloAppTemplate(directory, recipes));
+    case 'redux-app':
+      return Promise.all(reduxAppTemplate(directory, recipes));
     default:
       return Promise.reject('Template does not exist');
   }

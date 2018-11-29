@@ -6,7 +6,7 @@ import fs from 'fs';
 
 import { creator } from '../src';
 import { camelCase } from '../src/utils';
-import { usageFixture, atomicTemplatesFixture } from './fixtures';
+import { usageFixture } from './fixtures';
 import { nameQuestion, templateQuestion } from './questions';
 
 const {
@@ -18,7 +18,16 @@ const nameAndTemplate = componentName && template;
 const templateNoName = !componentName && template;
 const noInput = !componentName && !template;
 
-const isAtomic = atomicTemplatesFixture.includes(template);
+const requiresName = [
+  'atom',
+  'molecule',
+  'apollo-organism',
+  'redux-organism',
+  'template',
+  'react-app',
+  'redux-app',
+  'apollo-app'
+].includes(template);
 
 const targetPath = `${process.cwd()}/.tylerrc`;
 const hasConfig = fs.existsSync(targetPath);
@@ -63,7 +72,7 @@ if (useCustomFixtures && customFixturesDirectoryExists) {
 
 if (nameAndTemplate) {
   creator(componentName, template, customFixtures);
-} else if (templateNoName && isAtomic) {
+} else if (templateNoName && requiresName) {
   prompt(nameQuestion)
     .then(({ name }) => {
       creator(name, template, customFixtures);
@@ -71,7 +80,7 @@ if (nameAndTemplate) {
     .catch(err => {
       console.error(err);
     });
-} else if (templateNoName && !isAtomic) {
+} else if (templateNoName && !requiresName) {
   creator(null, template, customFixtures);
 } else if (noInput) {
   prompt([...templateQuestion, ...nameQuestion])

@@ -1,7 +1,9 @@
-import { atomicTemplates } from './atomic-templates';
-
 export const templates = [
-  ...atomicTemplates,
+  'atom',
+  'molecule',
+  'apollo-organism',
+  'redux-organism',
+  'template',
   'component',
   'container',
   'action',
@@ -11,4 +13,7 @@ export const templates = [
   'story',
   'query',
   'mutation',
+  'react-app',
+  'apollo-app',
+  'redux-app'
 ];

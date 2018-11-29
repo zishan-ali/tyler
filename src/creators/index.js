@@ -4,6 +4,8 @@ export { default as createAppendices } from './create-appendices';
 export { default as createAction } from './create-action';
 export { default as createComponent } from './create-component';
 export { default as createContainer } from './create-container';
+export { default as createClient } from './create-client';
+export { default as createServer } from './create-server';
 
 export { query as createQuery } from './create-graphql';
 export { mutation as createMutation } from './create-graphql';

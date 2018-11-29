@@ -12,6 +12,9 @@ export const creator = (name, type, recipes) => {
     case 'apollo-organism':
     case 'redux-organism':
     case 'template':
+    case 'react-app':
+    case 'apollo-app':
+    case 'redux-app':
       directory = `${process.cwd()}/${kebabCaseName}`;
       break;
     default:

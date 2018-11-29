@@ -12,3 +12,6 @@ export { default as storyTemplate } from './story';
 export { default as queryTemplate } from './query';
 export { default as mutationTemplate } from './mutation';
 export { default as templateTemplate } from './template';
+export { default as reactAppTemplate } from './react-app';
+export { default as apolloAppTemplate } from './apollo-app';
+export { default as reduxAppTemplate } from './redux-app';
