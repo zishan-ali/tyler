@@ -25,8 +25,6 @@ export { story as storyFixture } from './story';
 export { selector as selectorFixture } from './selector';
 export { test as selectorSpecFixture } from './selector';
 
-export { reactAppServer as reactAppServerFixture } from './server';
-export { apolloAppServer as apolloAppServerFixture } from './server';
-export { reduxAppServer as reduxAppServerFixture } from './server';
+export { server as serverFixture } from './server';
 
 export { style as styleFixture } from './style';
