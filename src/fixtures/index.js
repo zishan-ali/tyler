@@ -26,5 +26,6 @@ export { selector as selectorFixture } from './selector';
 export { test as selectorSpecFixture } from './selector';
 
 export { server as serverFixture } from './server';
+export { test as serverSpecFixture } from './server';
 
 export { style as styleFixture } from './style';

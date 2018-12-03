@@ -1,8 +1,13 @@
 export const server = `
+import React from 'react';
 import Koa from 'koa';
 import mount from 'koa-mount';
+import { renderToString } from 'react-dom/server';
+
+import { Container } from './containers/Container';
 
 const app = new Koa();
+const foo = renderToString(<Container />);
 
 app.use(async ctx => {
   ctx.status = 200;
@@ -16,10 +21,14 @@ app.use(async ctx => {
     <title>Hello World</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">${foo}</div>
   </body>
   </html>
   \`;
 });
 
-export const server = mount('/hello-world', app);`;
+export default mount('/hello-world', app);`;
+
+export const test = `
+// TODO
+`;
