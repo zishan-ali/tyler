@@ -4,7 +4,11 @@ export { default as createAppendices } from './create-appendices';
 export { default as createAction } from './create-action';
 export { default as createComponent } from './create-component';
 export { default as createContainer } from './create-container';
-export { default as createClient } from './create-client';
+
+export { default as createApolloClient } from './create-apollo-client';
+export { default as createReactClient } from './create-react-client';
+export { default as createReduxClient } from './create-redux-client';
+
 export { default as createServer } from './create-server';
 
 export { query as createQuery } from './create-graphql';
