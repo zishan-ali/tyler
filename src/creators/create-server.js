@@ -1,15 +1,7 @@
 import { createFile } from './';
-import {
-  serverFixture,
-  serverSpecFixture
-} from '../fixtures';
+import { serverFixture, serverSpecFixture } from '../fixtures';
 
-export default (
-  { 
-    server = serverFixture, 
-    serverSpec = serverSpecFixture 
-  }
-) => {
-  createFile('server.js', server);
-  createFile('server.spec.js', serverSpec);
+export default (directory, { server = serverFixture, serverSpec = serverSpecFixture }) => {
+  createFile(`${directory}/server.js`, server);
+  createFile(`${directory}/server.spec.js`, serverSpec);
 };
