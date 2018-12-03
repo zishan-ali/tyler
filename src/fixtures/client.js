@@ -1,5 +1,4 @@
-export const reactAppclient = 
-`import React from 'react';
+export const reactAppClient = `import React from 'react';
 import { render } from 'react-dom';
 
 import App from './containers/container';
@@ -7,8 +6,7 @@ import './styles/styles.scss';
 
 render(<App />, document.getElementById('root'));\n`;
 
-export const apolloAppclient = 
-`import React from 'react';
+export const apolloAppClient = `import React from 'react';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 import { render } from 'react-dom';
@@ -28,8 +26,7 @@ const AppContainer = () => (
 
 render(<AppContainer />, document.getElementById('root'));\n`;
 
-export const reduxAppClient = 
-`import React from 'react';
+export const reduxAppClient = `import React from 'react';
 import { render } from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
