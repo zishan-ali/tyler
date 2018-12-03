@@ -9,9 +9,7 @@ import { camelCase } from '../src/utils';
 import { usageFixture } from './fixtures';
 import { nameQuestion, templateQuestion } from './questions';
 
-const {
-  input: [template, ...inputName]
-} = meow(usageFixture);
+const { input: [template, ...inputName] } = meow(usageFixture);
 const componentName = inputName.join(' ');
 
 const nameAndTemplate = componentName && template;
