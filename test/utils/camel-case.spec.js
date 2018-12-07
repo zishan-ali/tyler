@@ -1,10 +1,10 @@
-import { pascalCase } from '../../src/utils';
+import { camelCase } from '../../src/utils';
 
-describe('.pascalCase/1', () => {
-  const input = 'some input';
-  const result = pascalCase(input);
+describe('.camelCase/1', () => {
+  const input = 'some input-string';
+  const result = camelCase(input);
 
-  it('converts input to capitalized camel case', () => {
-    expect(result).toEqual('SomeInput');
+  it('converts input to camel case', () => {
+    expect(result).toEqual('someInputString');
   });
 });
