@@ -3,8 +3,8 @@ import { reactAppClientFixture, reactClientSpecFixture } from '../fixtures';
 
 export default (
   directory,
-  { client = reactAppClientFixture, clientSpec = reactClientSpecFixture }
+  { app = reactAppClientFixture, appSpec = reactClientSpecFixture }
 ) => {
-  createFile(`${directory}/app.js`, client);
+  createFile(`${directory}/app.js`, app);
   createFile(`${directory}/app.spec.js`, '');
 };

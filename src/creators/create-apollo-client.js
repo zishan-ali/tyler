@@ -3,8 +3,8 @@ import { apolloAppClientFixture, apolloClientSpecFixture } from '../fixtures';
 
 export default (
   directory,
-  { client = apolloAppClientFixture, clientSpec = apolloClientSpecFixture }
+  { app = apolloAppClientFixture, appSpec = apolloClientSpecFixture }
 ) => {
-  createFile(`${directory}/app.js`, client);
+  createFile(`${directory}/app.js`, app);
   createFile(`${directory}/app.spec.js`, '');
 };
