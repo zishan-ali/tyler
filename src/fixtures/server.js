@@ -21,7 +21,7 @@ app.use(async ctx => {
     <title>Hello World</title>
   </head>
   <body>
-    <div id="root">${foo}</div>
+    <div id="root">$\{foo}</div>
   </body>
   </html>
   \`;
