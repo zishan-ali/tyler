@@ -1,7 +1,7 @@
-import { createAction } from '../creators'
+import { createAction } from '../creators';
 
-export default (directory) => (
+export default (directory, recipes) => (
   [
-    createAction(directory)
+    createAction(directory, recipes)
   ]
 );

@@ -1,5 +1,5 @@
 import { createFile } from './';
 import { readMeFixture } from '../fixtures';
 
-export default (directory) =>
-  createFile(`${directory}/README.md`, readMeFixture);
+export default (directory, { readme = readMeFixture }) =>
+  createFile(`${directory}/README.md`, readme);

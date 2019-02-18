@@ -17,9 +17,9 @@ describe('create GraphQL templates', async () => {
     mockfs.restore();
   });
 
-  describe('.createQuery/1', () => {
+  describe('.createQuery/2', () => {
     it('creates a `graphql` folder in the given directory', (done) => {
-      createQuery(parentPath)
+      createQuery(parentPath, {})
         .then(() => {
           expect(
             fs.existsSync(templatePath)).toBe(true);
@@ -28,7 +28,7 @@ describe('create GraphQL templates', async () => {
     });
 
     it('creates a `queries` file in the `graphql` directory', (done) => {
-      createQuery(parentPath)
+      createQuery(parentPath, {})
         .then(() => {
           expect(
             fs.readFileSync(`${templatePath}/queries.js`, { encoding: 'utf8' })
@@ -38,9 +38,9 @@ describe('create GraphQL templates', async () => {
     });
   });
 
-  describe('.createMutation/1', () => {
+  describe('.createMutation/2', () => {
     it('creates a `graphql` folder in the given directory', (done) => {
-      createMutation(parentPath)
+      createMutation(parentPath, {})
         .then(() => {
           expect(
             fs.existsSync(templatePath)).toBe(true);
@@ -49,7 +49,7 @@ describe('create GraphQL templates', async () => {
     });
 
     it('creates a `mutations` file in the `graphql` directory', (done) => {
-      createMutation(parentPath)
+      createMutation(parentPath, {})
         .then(() => {
           expect(
             fs.readFileSync(`${templatePath}/mutations.js`, { encoding: 'utf8' })

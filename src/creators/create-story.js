@@ -1,5 +1,5 @@
 import { createFile } from './';
 import { storyFixture } from '../fixtures';
 
-export default (directory) =>
-  createFile(`${directory}/story.js`, storyFixture);
+export default (directory, { story = storyFixture }) =>
+  createFile(`${directory}/story.js`, story);

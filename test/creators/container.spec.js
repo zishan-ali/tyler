@@ -1,9 +1,9 @@
 import mockfs from 'mock-fs';
 import fs from 'fs';
 import { createContainer } from '../../src/creators';
-import { containerFixture, containerTestFixture } from '../../src/fixtures';
+import { containerFixture, containerSpecFixture } from '../../src/fixtures';
 
-describe('.createContainer/1', async () => {
+describe('.createContainer/2', async () => {
   const parentPath = './src/foo-bar';
   const templatePath = `${parentPath}/containers`;
   
@@ -18,7 +18,7 @@ describe('.createContainer/1', async () => {
   });
 
   it('creates a `containers` folder in the given directory', (done) => {
-    createContainer(parentPath)
+    createContainer(parentPath, {})
       .then(() => {
         expect(
           fs.existsSync(templatePath)).toBe(true);
@@ -27,7 +27,7 @@ describe('.createContainer/1', async () => {
   });
 
   it('creates a `containers` file in the `containers` directory', (done) => {
-    createContainer(parentPath)
+    createContainer(parentPath, {})
       .then(() => {
         expect(
           fs.readFileSync(`${templatePath}/Container.jsx`, { encoding: 'utf8' })
@@ -37,11 +37,11 @@ describe('.createContainer/1', async () => {
   });
 
   it('creates a corresponding test file', (done) => {
-    createContainer(parentPath)
+    createContainer(parentPath, {})
       .then(() => {
         expect(
           fs.readFileSync(`${templatePath}/Container.spec.js`, { encoding: 'utf8' })
-        ).toEqual(containerTestFixture);
+        ).toEqual(containerSpecFixture);
         done();
       });
   });

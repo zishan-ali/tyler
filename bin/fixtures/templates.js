@@ -1,7 +1,9 @@
 export const templates = [
   'atom',
   'molecule',
-  'organism',
+  'apollo-organism',
+  'redux-organism',
+  'template',
   'component',
   'container',
   'action',
@@ -11,4 +13,7 @@ export const templates = [
   'story',
   'query',
   'mutation',
+  'react-app',
+  'apollo-app',
+  'redux-app'
 ];

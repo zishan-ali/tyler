@@ -1,12 +1,17 @@
 import { createFile, createFolder } from './';
 import {
   componentFixture,
-  componentTestFixture
+  componentSpecFixture
 } from '../fixtures';
 
-export default (directory) => {
+export default (directory, 
+  { 
+    component = componentFixture, 
+    componentSpec = componentSpecFixture 
+  }
+) => {
   const folderPath = `${directory}/components`;
   return createFolder(folderPath)
-    .then(() => createFile(`${folderPath}/Component.jsx`, componentFixture))
-    .then(() => createFile(`${folderPath}/Component.spec.js`, componentTestFixture))
+    .then(() => createFile(`${folderPath}/Component.jsx`, component))
+    .then(() => createFile(`${folderPath}/Component.spec.js`, componentSpec));
 };

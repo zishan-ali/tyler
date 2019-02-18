@@ -1,27 +1,31 @@
 import { createFolder, createTemplate } from './creators';
 import { kebabCase } from './utils';
 
-export const creator = (name, type) => {
-  const kebabCaseName = kebabCase(name);
+export const creator = (name, type, recipes) => {
+  const kebabCaseName = name ? kebabCase(name) : '';
 
   let directory;
 
-  switch(type) {
+  switch (type) {
     case 'atom':
     case 'molecule':
-    case 'organism':
-      directory = `${process.cwd()}/${kebabCaseName}`
+    case 'apollo-organism':
+    case 'redux-organism':
+    case 'template':
+    case 'react-app':
+    case 'apollo-app':
+    case 'redux-app':
+      directory = `${process.cwd()}/${kebabCaseName}`;
       break;
     default:
       directory = process.cwd();
   }
 
   return createFolder(directory)
-    .then(() => createTemplate(type, directory))
+    .then(() => createTemplate(type, directory, recipes))
     .then(() => process.exit(0))
-    .catch((err) => {
+    .catch(err => {
       console.log(err);
-      process.exitCode = 1
-    }
-  );
+      process.exitCode = 1;
+    });
 };

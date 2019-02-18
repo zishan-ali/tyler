@@ -1,12 +1,17 @@
 import { createFile, createFolder } from './';
 import {
   containerFixture,
-  containerTestFixture
+  containerSpecFixture
 } from '../fixtures';
 
-export default (directory) => {
+export default (directory, 
+  { 
+    container = containerFixture,
+    containerSpec = containerSpecFixture
+   }
+) => {
   const folderPath = `${directory}/containers`;
   return createFolder(folderPath)
-    .then(() => createFile(`${folderPath}/Container.jsx`, containerFixture))
-    .then(() => createFile(`${folderPath}/Container.spec.js`, containerTestFixture))
+    .then(() => createFile(`${folderPath}/Container.jsx`, container))
+    .then(() => createFile(`${folderPath}/Container.spec.js`, containerSpec));
 };

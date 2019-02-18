@@ -1,7 +1,7 @@
-import { createQuery } from '../creators'
+import { createQuery } from '../creators';
 
-export default (directory) => (
+export default (directory, recipes) => (
   [
-    createQuery(directory)
+    createQuery(directory, recipes)
   ]
 );

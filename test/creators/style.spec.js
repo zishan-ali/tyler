@@ -3,7 +3,7 @@ import fs from 'fs';
 import { createStyle } from '../../src/creators';
 import { styleFixture } from '../../src/fixtures';
 
-describe('.createComponent/1', async () => {
+describe('.createStyle/2', async () => {
   const parentPath = './src/foo-bar';
   const templatePath = `${parentPath}/styles`;
   
@@ -18,7 +18,7 @@ describe('.createComponent/1', async () => {
   });
 
   it('creates a `styles` folder in the given directory', (done) => {
-    createStyle(parentPath)
+    createStyle(parentPath, {})
       .then(() => {
         expect(
           fs.existsSync(templatePath)).toBe(true);
@@ -27,10 +27,10 @@ describe('.createComponent/1', async () => {
   });
 
   it('creates a `styles` file in the `styles` directory', (done) => {
-    createStyle(parentPath)
+    createStyle(parentPath, {})
       .then(() => {
         expect(
-          fs.readFileSync(`${templatePath}/style.scss`, { encoding: 'utf8' })
+          fs.readFileSync(`${templatePath}/styles.scss`, { encoding: 'utf8' })
         ).toEqual(styleFixture);
         done();
       });

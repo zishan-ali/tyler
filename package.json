@@ -1,6 +1,6 @@
 {
   "name": "tyler",
-  "version": "1.0.7",
+  "version": "1.0.8-1",
   "description": "An interactive React.js CLI for building atomic components & utilities.",
   "preferGlobal": true,
   "authors": [
@@ -39,6 +39,7 @@
     "build:src": "babel src -d dist/src",
     "build": "yarn clean && yarn build:bin && yarn build:src",
     "lint": "eslint ./src/**/*.js",
+    "lint:fix": "eslint **/*.js --fix",
     "test": "jest test"
   },
   "linters": {

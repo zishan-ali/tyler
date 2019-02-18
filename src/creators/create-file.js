@@ -21,5 +21,5 @@ export default (path, content) => {
         resolve(path);
       });
     });
-  })
+  });
 };

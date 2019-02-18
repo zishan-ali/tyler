@@ -3,7 +3,7 @@ import fs from 'fs';
 import { createStory } from '../../src/creators';
 import { storyFixture } from '../../src/fixtures';
 
-describe('.createStory/1', async () => {
+describe('.createStory/2', async () => {
   const parentPath = './src/foo-bar';
 
   beforeEach(() => {
@@ -17,7 +17,7 @@ describe('.createStory/1', async () => {
   });
 
   it('creates an `story` file in the given directory', (done) => {
-    createStory(parentPath)
+    createStory(parentPath, {})
       .then(() => {
         expect(
           fs.readFileSync(`${parentPath}/story.js`, { encoding: 'utf8' })

@@ -1,13 +1,17 @@
 import { createFile, createFolder } from './';
-import { kebabCase } from '../utils';
 import {
   selectorFixture,
-  selectorTestFixture
+  selectorSpecFixture
 } from '../fixtures';
 
-export default (directory) => {
+export default (directory, 
+  {
+    selector = selectorFixture,
+    selectorSpec = selectorSpecFixture
+  }
+) => {
   const folderPath = `${directory}/selectors`;
   return createFolder(folderPath)
-    .then(() => createFile(`${folderPath}/selector.js`, selectorFixture))
-    .then(() => createFile(`${folderPath}/selector.spec.js`, selectorTestFixture));
-}
+    .then(() => createFile(`${folderPath}/selector.js`, selector))
+    .then(() => createFile(`${folderPath}/selector.spec.js`, selectorSpec));
+};

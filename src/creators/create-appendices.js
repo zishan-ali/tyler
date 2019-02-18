@@ -9,7 +9,7 @@ export default (path, content) => {
       if (err) { 
         reject(err);
         return;
-      };
+      }
 
       resolve(path);
     });
