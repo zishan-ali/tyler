@@ -1,15 +1,8 @@
-import {
-  createClient,
-  createServer,
-  createContainer,
-  createStyle
-} from '../creators';
+import { createReduxClient, createServer, createContainer, createStyle } from '../creators';
 
-export default (directory, recipes) => (
-  [
-    createClient(directory, recipes),
-    createServer(directory, recipes),
-    createContainer(directory, recipes),
-    createStyle(directory, recipes)
-  ]
-);
+export default (directory, recipes) => [
+  createReduxClient(directory, recipes),
+  createServer(directory, recipes),
+  createContainer(directory, recipes),
+  createStyle(directory, recipes)
+];

@@ -3,15 +3,15 @@
 import { prompt } from 'inquirer';
 import meow from 'meow';
 import fs from 'fs';
+import os from 'os';
+import path from 'path';
 
 import { creator } from '../src';
 import { camelCase } from '../src/utils';
 import { usageFixture } from './fixtures';
 import { nameQuestion, templateQuestion } from './questions';
 
-const {
-  input: [template, ...inputName]
-} = meow(usageFixture);
+const { input: [template, ...inputName] } = meow(usageFixture);
 const componentName = inputName.join(' ');
 
 const nameAndTemplate = componentName && template;
@@ -29,12 +29,25 @@ const requiresName = [
   'apollo-app'
 ].includes(template);
 
-const targetPath = `${process.cwd()}/.tylerrc`;
-const hasConfig = fs.existsSync(targetPath);
-const config = hasConfig && fs.readFileSync(targetPath, { encoding: 'utf8' });
-const configContents = JSON.parse(config);
+const home = os.homedir();
+
+const findUp = (filename, dir = process.cwd()) => {
+  if (dir.startsWith(home)) {
+    const file = path.join(dir, filename);
+    if (fs.existsSync(file)) {
+      return file;
+    }
+    return findUp(filename, path.resolve(dir, '..'));
+  }
+  return '';
+};
+
 const hasFileExtensions = filename => filename.includes('.');
 const stripFileExtensions = filename => filename.split('.').slice(0, -1).join('.');
+
+const targetPath = findUp('.tylerrc');
+const config = targetPath ? fs.readFileSync(targetPath, { encoding: 'utf8' }) : {};
+const configContents = config && JSON.parse(config);
 
 const { useCustomFixtures, customFixturesDirectory } = configContents;
 
