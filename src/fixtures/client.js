@@ -1,20 +1,20 @@
 export const reactAppClient = `import React from 'react';
 import { render } from 'react-dom';
 
-import App from './containers/container';
+import App from './containers/Container';
 import './styles/styles.scss';
 
 render(<App />, document.getElementById('root'));\n`;
 
 export const apolloAppClient = `import React from 'react';
-import ApolloClient from 'apollo-boost';
+import Client from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 import { render } from 'react-dom';
 
-import App from './containers/container';
+import App from './containers/Container';
 import './styles/styles.scss';
 
-const client = new ApolloClient({
+const client = new Client({
   uri: 'https://insert-api-here'
 });
 
@@ -31,7 +31,7 @@ import { render } from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-import App from './containers/container';
+import App from './containers/Container';
 import './styles/styles.scss';
 
 const AppContainer = ({ store }) => (
