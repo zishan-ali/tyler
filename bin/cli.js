@@ -46,7 +46,7 @@ const hasFileExtensions = filename => filename.includes('.');
 const stripFileExtensions = filename => filename.split('.').slice(0, -1).join('.');
 
 const targetPath = findUp('.tylerrc');
-const config = targetPath ? fs.readFileSync(targetPath, { encoding: 'utf8' }) : {};
+const config = targetPath ? fs.readFileSync(targetPath, { encoding: 'utf8' }) : '{}';
 const configContents = config && JSON.parse(config);
 
 const { useCustomFixtures, customFixturesDirectory } = configContents;
