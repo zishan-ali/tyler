@@ -42,6 +42,7 @@ const findUp = (filename, dir = process.cwd()) => {
   return '';
 };
 
+const isUpperCase = str => str === str.toUpperCase();
 const hasFileExtensions = filename => filename.includes('.');
 const stripFileExtensions = filename => filename.split('.').slice(0, -1).join('.');
 
@@ -64,7 +65,7 @@ const readCustomFixtures = (directory, files) => {
           encoding: 'utf8'
         });
         const fileWithoutExtension = hasFileExtensions(file) ? stripFileExtensions(file) : file;
-        const sanitizedFilename = camelCase(fileWithoutExtension);
+        const sanitizedFilename = isUpperCase(fileWithoutExtension) ? fileWithoutExtension.toLowerCase() : camelCase(fileWithoutExtension);
         data[sanitizedFilename] = result;
       }
     });
