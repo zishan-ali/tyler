@@ -1,5 +1,4 @@
-export const server = `
-import React from 'react';
+export const server = `import React from 'react';
 import Koa from 'koa';
 import mount from 'koa-mount';
 import { renderToString } from 'react-dom/server';
@@ -27,4 +26,4 @@ app.use(async ctx => {
   \`;
 });
 
-export default mount('/hello-world', app);`;
+export default mount('/hello-world', app); \n`;
