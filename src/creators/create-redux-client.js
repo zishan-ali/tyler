@@ -1,10 +1,5 @@
 import { createFile } from './';
-import { reduxAppClientFixture, reduxClientSpecFixture } from '../fixtures';
+import { reduxAppClientFixture } from '../fixtures';
 
-export default (
-  directory,
-  { app = reduxAppClientFixture, appSpec = reduxClientSpecFixture }
-) => {
+export default (directory, { app = reduxAppClientFixture }) =>
   createFile(`${directory}/app.js`, app);
-  createFile(`${directory}/app.spec.js`, '');
-};

@@ -28,7 +28,3 @@ app.use(async ctx => {
 });
 
 export default mount('/hello-world', app);`;
-
-export const test = `
-// TODO
-`;
