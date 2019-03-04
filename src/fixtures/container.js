@@ -1,7 +1,7 @@
 export const container =
 `import React from 'react';
 
-const Component = props => <div>{props}</div>;
+const Component = () => <div>Container</div>;
 
 export const Container = Component;
 \n`;
