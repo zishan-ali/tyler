@@ -21,6 +21,7 @@ export { mutation as mutationFixture } from './graphql';
 export { readMe as readMeFixture } from './markdown';
 
 export { story as storyFixture } from './story';
+export { storyIndex as storyIndexFixture } from './story';
 
 export { selector as selectorFixture } from './selector';
 export { test as selectorSpecFixture } from './selector';

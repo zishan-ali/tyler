@@ -48,6 +48,7 @@
     ]
   },
   "dependencies": {
+    "globby": "9.2.0",
     "inquirer": "^5.2.0",
     "meow": "^4.0.0",
     "strip-indent": "^2.0.0"
