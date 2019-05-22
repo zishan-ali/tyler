@@ -3,6 +3,7 @@
 import { prompt } from 'inquirer';
 import meow from 'meow';
 import fs from 'fs';
+import globby from 'globby';
 import os from 'os';
 import path from 'path';
 
@@ -44,7 +45,7 @@ const findUp = (filename, dir = process.cwd()) => {
 
 const isUpperCase = str => str === str.toUpperCase();
 const hasFileExtensions = filename => filename.includes('.');
-const stripFileExtensions = filename => filename.split('.').slice(0, -1).join('.');
+const stripFileExtensions = filename => filename.replace(/\.[^.]+$/, '');
 
 const targetPath = findUp('.tylerrc');
 const config = targetPath ? fs.readFileSync(targetPath, { encoding: 'utf8' }) : '{}';
@@ -74,10 +75,22 @@ const readCustomFixtures = (directory, files) => {
 };
 
 const getCustomFixtures = () => {
-  const allFiles = fs.readdirSync(customFixturesDirectory, {
-    encoding: 'utf8'
-  });
-  return readCustomFixtures(customFixturesDirectory, allFiles);
+  return globby
+    .sync(['./**'], {
+      absolute: true,
+      cwd: customFixturesDirectory,
+      excludeDirectories: true
+    })
+    .reduce((data, absolutePath) => {
+      const result = fs.readFileSync(absolutePath, { encoding: 'utf8' });
+      const file = path.relative(customFixturesDirectory, absolutePath);
+      const fileWithoutExtension = hasFileExtensions(file) ? stripFileExtensions(file) : file;
+      const sanitizedFilename = isUpperCase(fileWithoutExtension)
+        ? fileWithoutExtension.toLowerCase()
+        : camelCase(fileWithoutExtension);
+      data[sanitizedFilename] = result;
+      return data;
+    }, {});
 };
 
 if (useCustomFixtures && customFixturesDirectoryExists) {
